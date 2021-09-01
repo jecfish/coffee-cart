@@ -2,7 +2,7 @@
   <div class="list" v-if="cartList">
     <p v-if="!cartList.length">No coffee, go add some.</p>
     <div v-if="cartList.length">
-      <AppPay/>
+      <Pay/>
       <ul>
         <li class="list-header">
           <div>Item</div>
@@ -13,13 +13,13 @@
         <li v-for="item in cartList" :key="item.name">
           <div>{{ item.name }}</div>
           <div>
-            <span class="unit-desc">{{ item.unitPrice }} x {{ item.quantity }}</span>
+            <span class="unit-desc">{{ currency(item.unitPrice) }} x {{ item.quantity }}</span>
             <div class="unit-controller">
               <button type="button" @click="addOneCartItem(item.name)">+</button>
               <button type="button" @click="removeOneCartItem(item.name)">-</button>
             </div>
           </div>
-          <div>{{ item.price }}</div>
+          <div>{{ currency(item.price) }}</div>
           <div>
             <button class="delete" type="button" @click="removeCartItem(item.name)">x</button>
           </div>
@@ -32,6 +32,7 @@
 <script lang="ts">
 import { ref, defineComponent } from 'vue'
 import { mapState, mapActions, mapGetters, mapMutations } from 'vuex'
+import { currency } from '../../utils';
 import Pay from "../parts/Pay.vue";
 
 export default defineComponent({
@@ -44,6 +45,7 @@ export default defineComponent({
     }),
   },
   methods: {
+    currency,
     ...mapActions("cart", []),
     ...mapMutations("cart", ["addOneCartItem", "removeOneCartItem", "removeCartItem"])
   }

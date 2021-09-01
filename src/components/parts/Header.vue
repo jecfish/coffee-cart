@@ -66,6 +66,7 @@ a.router-link-active {
   }
 
   a {
+    text-decoration: none;
     font-size: 1.2rem;
   }
 }

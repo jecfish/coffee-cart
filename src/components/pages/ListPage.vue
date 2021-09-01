@@ -5,7 +5,7 @@
         <h4>
           {{ coffee.name }}
           <br>
-          <small>{{ coffee.price }}</small>
+          <small>{{ currency(coffee.price) }}</small>
         </h4>
         <div class="cup" @click="addToCart(coffee.name)">
           <Cup :item="coffee"/>
@@ -19,6 +19,7 @@
 <script lang="ts">
 import { ref, defineComponent } from 'vue'
 import { mapState, mapMutations } from 'vuex'
+import { currency } from '../../utils';
 import Cup from "../parts/Cup.vue";
 import Pay from "../parts/Pay.vue";
 export default defineComponent({
@@ -33,6 +34,7 @@ export default defineComponent({
     this.$store.dispatch("coffees/getCoffeeList");
   },
   methods: {
+    currency,
     ...mapMutations("cart", ["addToCart"])
   }
 })

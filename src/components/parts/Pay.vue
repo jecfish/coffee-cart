@@ -1,10 +1,11 @@
 <template>
-  <button class="pay" type="button" @click="pay()">Total: {{ total }}</button>
+  <button class="pay" type="button" @click="pay()">Total: {{ currency(total) }}</button>
 </template>
 
 <script lang="ts">
 import { ref, defineComponent } from 'vue'
 import { mapGetters } from 'vuex'
+import { currency } from '../../utils';
 
 export default defineComponent({
   name: 'Pay',
@@ -14,6 +15,7 @@ export default defineComponent({
     })
   },
   methods: {
+    currency,
     pay() {
       alert("Yay, order placed. Start a new order!");
       this.$store.commit("cart/emptyCart");
