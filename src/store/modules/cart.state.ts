@@ -52,7 +52,7 @@ const mutations = {
 
     state.list = list
   },
-  emptyCart() {
+  emptyCart(state:any) {
     state.list = []
   },
   removeCartItem(state: any, coffee: any) {

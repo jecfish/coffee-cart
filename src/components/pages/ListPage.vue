@@ -65,7 +65,7 @@ button:hover {
   color: goldenrod;
 }
 
-.pay {
+:deep(.pay) {
   display: none;
 }
 
@@ -74,7 +74,7 @@ button:hover {
     grid-template-columns: repeat(2, auto);
   }
 
-  .pay {
+  :deep(.pay) {
     display: block;
     position: fixed;
     right: 10px;
