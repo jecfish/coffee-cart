@@ -4,40 +4,40 @@
       <li v-for="coffee in list" :key="coffee.name">
         <h4>
           {{ coffee.name }}
-          <br>
+          <br />
           <small>{{ currency(coffee.price) }}</small>
         </h4>
         <div class="cup" @click="addToCart(coffee.name)">
-          <Cup :item="coffee"/>
+          <Cup :item="coffee" />
         </div>
       </li>
     </ul>
-    <Pay/>
+    <Pay />
   </div>
 </template>
 
 <script lang="ts">
-import { ref, defineComponent } from 'vue'
-import { mapState, mapMutations } from 'vuex'
-import { currency } from '../../utils';
+import { defineComponent } from "vue";
+import { mapState, mapMutations } from "vuex";
+import { currency } from "../../utils";
 import Cup from "../parts/Cup.vue";
 import Pay from "../parts/Pay.vue";
 export default defineComponent({
-  name: 'ListPage',
+  name: "ListPage",
   components: { Cup, Pay },
   computed: {
     ...mapState({
-      list: (state: any) => state.coffees.list
-    })
+      list: (state: any) => state.coffees.list,
+    }),
   },
   created() {
     this.$store.dispatch("coffees/getCoffeeList");
   },
   methods: {
     currency,
-    ...mapMutations("cart", ["addToCart"])
-  }
-})
+    ...mapMutations("cart", ["addToCart"]),
+  },
+});
 </script>
 
 <style scoped>
