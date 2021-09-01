@@ -10,8 +10,8 @@
 </template>
 
 <script lang="ts">
-import { ref, defineComponent } from 'vue'
-import { mapGetters } from 'vuex'
+import { defineComponent } from 'vue';
+import { mapGetters } from 'vuex';
 
 export default defineComponent({
   name: 'Header',
@@ -19,10 +19,6 @@ export default defineComponent({
     ...mapGetters({
       cartCount: "cart/cartCount"
     })
-  },
-  setup: () => {
-    const count = ref(0)
-    return { count }
   }
 })
 </script>

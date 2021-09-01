@@ -3,8 +3,8 @@
 </template>
 
 <script lang="ts">
-import { ref, defineComponent } from 'vue'
-import { mapGetters } from 'vuex'
+import { defineComponent } from 'vue';
+import { mapGetters } from 'vuex';
 import { currency } from '../../utils';
 
 export default defineComponent({

@@ -30,8 +30,8 @@
 </template>
 
 <script lang="ts">
-import { ref, defineComponent } from 'vue'
-import { mapState, mapActions, mapGetters, mapMutations } from 'vuex'
+import { defineComponent } from 'vue';
+import { mapActions, mapGetters, mapMutations } from 'vuex';
 import { currency } from '../../utils';
 import Pay from "../parts/Pay.vue";
 
