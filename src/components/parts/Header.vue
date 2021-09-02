@@ -1,7 +1,7 @@
 <template>
   <ul>
     <li>
-      <router-link to="/menu">menu</router-link>
+      <router-link to="/">menu</router-link>
     </li>
     <li>
       <router-link to="/cart">cart ({{ cartCount }})</router-link>

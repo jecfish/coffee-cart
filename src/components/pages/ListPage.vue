@@ -13,6 +13,7 @@
       </li>
     </ul>
     <Pay />
+    <Ad v-if="showAd" />
   </div>
 </template>
 
@@ -22,13 +23,20 @@ import { mapState, mapMutations } from "vuex";
 import { currency } from "../../utils";
 import Cup from "../parts/Cup.vue";
 import Pay from "../parts/Pay.vue";
+import Ad from "../parts/Ad.vue";
+
 export default defineComponent({
   name: "ListPage",
-  components: { Cup, Pay },
+  components: { Cup, Pay, Ad },
   computed: {
     ...mapState({
       list: (state: any) => state.coffees.list,
     }),
+  },
+  data() {
+    return {
+      showAd: this.$route.query.ad
+    }
   },
   created() {
     this.$store.dispatch("coffees/getCoffeeList");

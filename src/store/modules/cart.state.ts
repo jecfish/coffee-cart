@@ -18,7 +18,7 @@ const getters = {
       .map((item: any) => {
         // get coffee object by name
         const { price, ...props } = rootState.coffees.list.find(
-          c => c.name === item.name
+          (c: any) => c.name === item.name
         );
 
         return {
