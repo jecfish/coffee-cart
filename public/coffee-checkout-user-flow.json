@@ -1,0 +1,227 @@
+{
+  "title": "order coffee",
+  "steps": [
+    {
+      "type": "setViewport",
+      "width": 858,
+      "height": 1041,
+      "deviceScaleFactor": 1,
+      "isMobile": false,
+      "hasTouch": false,
+      "isLandscape": false
+    },
+    {
+      "type": "navigate",
+      "url": "https://coffee-cart.netlify.app/",
+      "assertedEvents": [
+        {
+          "type": "navigation",
+          "url": "https://coffee-cart.netlify.app/",
+          "title": "Coffee cart"
+        }
+      ]
+    },
+    {
+      "type": "click",
+      "selectors": [
+        [
+          "#app > div:nth-child(3) > ul > li:nth-child(3) > div > div > div.cup-body > div.ingredient.steamed.milk"
+        ]
+      ],
+      "target": "main",
+      "offsetX": 82.7198486328125,
+      "offsetY": 39.476165771484375
+    },
+    {
+      "type": "click",
+      "selectors": [
+        [
+          "#app > div:nth-child(3) > ul > li:nth-child(6) > div > div > div.cup-body > div.ingredient.water"
+        ]
+      ],
+      "target": "main",
+      "offsetX": 64.9979248046875,
+      "offsetY": 56.881927490234375
+    },
+    {
+      "type": "click",
+      "selectors": [
+        [
+          "#app > div:nth-child(3) > ul > li:nth-child(5) > div > div > div.cup-body > div.ingredient.espresso"
+        ]
+      ],
+      "target": "main",
+      "offsetX": 86.2086181640625,
+      "offsetY": 10.1888427734375
+    },
+    {
+      "type": "click",
+      "selectors": [
+        [
+          "aria/cart (3)"
+        ],
+        [
+          "#app > ul > li:nth-child(2) > a"
+        ]
+      ],
+      "target": "main",
+      "offsetX": 38.1875,
+      "offsetY": 21
+    },
+    {
+      "type": "click",
+      "selectors": [
+        [
+          "#app > div.list > div > ul > li:nth-child(2) > div:nth-child(2) > div > button:nth-child(1)"
+        ]
+      ],
+      "target": "main",
+      "offsetX": 11,
+      "offsetY": 11.984375
+    },
+    {
+      "type": "click",
+      "selectors": [
+        [
+          "#app > div.list > div > ul > li:nth-child(2) > div:nth-child(2) > div > button:nth-child(1)"
+        ]
+      ],
+      "target": "main",
+      "offsetX": 11,
+      "offsetY": 11.984375
+    },
+    {
+      "type": "click",
+      "selectors": [
+        [
+          "aria/Total: $58.00"
+        ],
+        [
+          "#app > div.list > div > button"
+        ]
+      ],
+      "target": "main",
+      "offsetX": 146,
+      "offsetY": 24.921875
+    },
+    {
+      "type": "click",
+      "selectors": [
+        [
+          "aria/Name"
+        ],
+        [
+          "#name"
+        ]
+      ],
+      "target": "main",
+      "offsetX": 106.015625,
+      "offsetY": 10.921875
+    },
+    {
+      "type": "click",
+      "selectors": [
+        [
+          "aria/Name"
+        ],
+        [
+          "#name"
+        ]
+      ],
+      "target": "main",
+      "offsetX": 105.015625,
+      "offsetY": 20.921875
+    },
+    {
+      "type": "change",
+      "value": "jec",
+      "selectors": [
+        [
+          "aria/Name"
+        ],
+        [
+          "#name"
+        ]
+      ],
+      "target": "main"
+    },
+    {
+      "type": "keyDown",
+      "target": "main",
+      "key": "Tab"
+    },
+    {
+      "type": "keyUp",
+      "key": "Tab",
+      "target": "main"
+    },
+    {
+      "type": "change",
+      "value": "jec@random.com",
+      "selectors": [
+        [
+          "aria/Email"
+        ],
+        [
+          "#email"
+        ]
+      ],
+      "target": "main"
+    },
+    {
+      "type": "click",
+      "selectors": [
+        [
+          "aria/[role=\"form\"]"
+        ],
+        [
+          "#app > div.list > div > div > div > form > div:nth-child(3) > label"
+        ]
+      ],
+      "target": "main",
+      "offsetX": 287,
+      "offsetY": 22.921875
+    },
+    {
+      "type": "click",
+      "selectors": [
+        [
+          "aria/I would like to receive order updates and promotional messages."
+        ],
+        [
+          "#promotion"
+        ]
+      ],
+      "target": "main",
+      "offsetX": 310,
+      "offsetY": 8.921875
+    },
+    {
+      "type": "change",
+      "value": "on",
+      "selectors": [
+        [
+          "aria/I would like to receive order updates and promotional messages."
+        ],
+        [
+          "#promotion"
+        ]
+      ],
+      "target": "main"
+    },
+    {
+      "type": "click",
+      "selectors": [
+        [
+          "aria/Submit"
+        ],
+        [
+          "#app > div.list > div > div > div > form > div:nth-child(4) > button"
+        ]
+      ],
+      "target": "main",
+      "offsetX": 44.359375,
+      "offsetY": 19.234375
+    }
+  ]
+}
