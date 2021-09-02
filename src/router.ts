@@ -6,16 +6,12 @@ export default createRouter({
   history: createWebHistory(),
   routes: [
     {
-      path: '/menu',
+      path: '/',
       component: ListPage
   },
   {
       path: '/cart',
       component: CartPage
   },
-  {
-      path: '/',
-      redirect: '/menu'
-  }
   ]
 })

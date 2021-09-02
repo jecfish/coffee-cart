@@ -1,16 +1,19 @@
 <template>
   <Header />
+  <Snackbar />
   <router-view />
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 import Header from "./components/parts/Header.vue";
+import Snackbar from "./components/parts/Snackbar.vue";
 
 export default defineComponent({
   name: 'App',
   components: {
-    Header
+    Header,
+    Snackbar
   }
 })
 </script>

@@ -137,7 +137,7 @@ li div:last-child {
 .delete {
   height: 24px;
   width: 24px;
-  font-size: 10px;
+  font-size: 14px;
   border-radius: 50%;
   font-weight: bold;
   background: rgba(10, 10, 10, 0.15);
@@ -159,7 +159,7 @@ li div:last-child {
 
 .unit-controller button {
   min-height: 20px;
-  font-size: 10px;
+  font-size: 14px;
   border: 2px solid;
   padding: 0 6px;
   margin: 2px -1px;

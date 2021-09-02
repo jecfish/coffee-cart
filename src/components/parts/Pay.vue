@@ -1,17 +1,17 @@
 <template>
   <button class="pay" type="button" @click="pay()">Total: {{ currency(total) }}</button>
-  <Contact :isShow="isShow" @close="closed()" />
+  <PaymentDetails :isShow="isShow" @close="closed()" />
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { mapGetters } from 'vuex';
 import { currency } from '../../utils';
-import Contact  from './Contact.vue';
+import PaymentDetails  from './PaymentDetails.vue';
 
 export default defineComponent({
   name: 'Pay',
-  components: { Contact },
+  components: { PaymentDetails },
   computed: {
     ...mapGetters({
       total: 'cart/cartTotal'
@@ -25,10 +25,7 @@ export default defineComponent({
   methods: {
     currency,
     pay() {
-      // alert("Yay, order placed. Start a new order!");
       this.isShow = true;
-      this.$store.commit("cart/emptyCart");
-      this.$router.push("/menu");
     },
     closed() {
       this.isShow = false;
