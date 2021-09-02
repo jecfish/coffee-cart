@@ -38,7 +38,7 @@ export default defineComponent({
   data() {
     return {
       showAd: this.$route.query.ad,
-      waitTime: 2000
+      waitTime: 1600
     }
   },
   created() {
