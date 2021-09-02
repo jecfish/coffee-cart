@@ -14,7 +14,7 @@ export default defineComponent({
   data() {
     return {
       show: false,
-      timeout: 2000,
+      timeout: 2800,
       timeoutId: null,
     }
   },
