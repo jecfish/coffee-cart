@@ -18,12 +18,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import { mapState, mapMutations } from "vuex";
-import { currency } from "../../utils";
-import Cup from "../parts/Cup.vue";
-import Pay from "../parts/Pay.vue";
-import Ad from "../parts/Ad.vue";
+import { defineComponent } from 'vue';
+import { mapState, mapMutations } from 'vuex';
+import { currency } from '../../utils';
+import Cup from '../parts/Cup.vue';
+import Pay from '../parts/Pay.vue';
+import Ad from '../parts/Ad.vue';
 
 export default defineComponent({
   name: "ListPage",
@@ -35,10 +35,15 @@ export default defineComponent({
   },
   data() {
     return {
-      showAd: this.$route.query.ad
+      showAd: this.$route.query.ad,
+      waitTime: 2000
     }
   },
   created() {
+    if (this.showAd) {
+      this.$store.commit('coffees/setWaitTime', this.waitTime);
+    }
+
     this.$store.dispatch("coffees/getCoffeeList");
   },
   methods: {

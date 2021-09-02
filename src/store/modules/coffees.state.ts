@@ -2,6 +2,7 @@ import coffee from '../../api/coffee.api'
 
 // initial state
 const state = () => ({
+  waitTime: 0,
   list: []
 })
 
@@ -10,9 +11,9 @@ const getters = {}
 
 // actions
 const actions = {
-  async getCoffeeList({ commit }: any) {
+  async getCoffeeList({ state, commit }: any) {
     try {
-      const list = await coffee.getList();
+      const list = await coffee.getList(state.waitTime);
       commit("getListSuccess", list);
     } catch (err) {
       commit("getListFailure", err);
@@ -23,6 +24,9 @@ const actions = {
 
 // mutations
 const mutations = {
+  setWaitTime(state: any, time: number) {
+    state.waitTime = time;
+  },
   getListSuccess(state: any, coffees: any) {
     state.list = coffees
   },
