@@ -1,6 +1,6 @@
 # Coffee cart
 
-This demo created with Vue 3 + Typescript + Vite.
+https://coffee-cart.netlify.app/. This demo created with Vue 3 + Typescript + Vite.
 
 ## Getting started
 
