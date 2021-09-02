@@ -1,4 +1,5 @@
 <template>
+  <Banner v-if="showAd" />
   <div>
     <ul>
       <li v-for="coffee in list" :key="coffee.name">
@@ -24,10 +25,11 @@ import { currency } from '../../utils';
 import Cup from '../parts/Cup.vue';
 import Pay from '../parts/Pay.vue';
 import Ad from '../parts/Ad.vue';
+import Banner from '../parts/Banner.vue';
 
 export default defineComponent({
   name: "ListPage",
-  components: { Cup, Pay, Ad },
+  components: { Cup, Pay, Ad, Banner },
   computed: {
     ...mapState({
       list: (state: any) => state.coffees.list,
