@@ -14,7 +14,7 @@
       </li>
     </ul>
     <Pay />
-    <Ad v-if="showAd" />
+    <!-- <Ad v-if="showAd" /> -->
   </div>
 </template>
 
