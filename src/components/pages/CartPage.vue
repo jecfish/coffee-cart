@@ -61,7 +61,7 @@ p {
 .list {
   margin: 0 auto;
   max-width: 680px;
-  padding: 0 10px;
+  padding: 10px;
 }
 
 ul {
