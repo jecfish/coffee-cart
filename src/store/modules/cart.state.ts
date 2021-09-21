@@ -3,6 +3,17 @@ const state = () => ({
   list: []
 });
 
+let random = 0;
+
+function slowProcessing(results: any) {
+  if (results.length >= 7) {
+    for (let i = 0; i < 1000 * 1000 * 100; i++) {
+      random = Math.random();
+    }
+  }
+  return results;
+}
+
 // getters
 const getters = {
   cartCount: (state: any) =>
@@ -13,8 +24,8 @@ const getters = {
     state.list
       .map((c: any) => rootState.coffees.list.find((x: any) => x.name === c.name).price * c.quantity)
       .reduce((acc: any, curr: any) => acc + curr, 0),
-  cartList: (state: any, _: any, rootState: any) =>
-    state.list
+  cartList: (state: any, _: any, rootState: any) => {
+    const results = state.list
       .map((item: any) => {
         // get coffee object by name
         const { price, ...props } = rootState.coffees.list.find(
@@ -28,7 +39,10 @@ const getters = {
           ...props
         };
       })
-      .sort((a: any, b: any) => (a.name < b.name ? -1 : 1))
+      .sort((a: any, b: any) => (a.name < b.name ? -1 : 1));
+
+    return slowProcessing(results);
+  }
 }
 
 // actions
