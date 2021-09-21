@@ -1,23 +1,9 @@
+import { slowProcessing } from '../../utils';
+
 // initial state
 const state = () => ({
   list: []
 });
-
-function slowProcessing(results: any) {
-  if (results.length >= 7) {
-    return results.map((r: any) => {
-      let random = 0;
-      for (let i = 0; i < 1000 * 1000 * 10; i++) {
-        random = random * Math.random();
-      }
-      return {
-        ...r,
-        random,
-      };
-    })
-  }
-  return results;
-}
 
 // getters
 const getters = {

@@ -9,3 +9,8 @@ https://coffee-cart.netlify.app/. This demo created with Vue 3 + Typescript + Vi
 1. Download the project.
 2. Run `npm install`.
 3. Run `npm run dev` to start a local server.
+
+## To run it with slow performance
+
+1. Run with https://coffee-cart.netlify.app?ad=1
+2. When the cart has more than 7 items, The process will be slowing down.
