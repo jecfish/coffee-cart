@@ -3,13 +3,18 @@ const state = () => ({
   list: []
 });
 
-let random = 0;
-
 function slowProcessing(results: any) {
   if (results.length >= 7) {
-    for (let i = 0; i < 1000 * 1000 * 100; i++) {
-      random = Math.random();
-    }
+    return results.map((r: any) => {
+      let random = 0;
+      for (let i = 0; i < 1000 * 1000 * 10; i++) {
+        random = random * Math.random();
+      }
+      return {
+        ...r,
+        random,
+      };
+    })
   }
   return results;
 }
