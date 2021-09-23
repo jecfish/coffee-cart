@@ -9,10 +9,7 @@ export function wait(ms: number, value: any) {
 export function slowProcessing(results: any) {
   if (results.length >= 7) {
     return results.map((r: any) => {
-      let random = 0;
-      for (let i = 0; i < 1000 * 1000 * 10; i++) {
-        random = random * Math.random();
-      }
+      const random = Math.random();
       return {
         ...r,
         random,
