@@ -75,5 +75,16 @@
             { "name": "steamed cream", "quantity": 30 },
             { "name": "milk foam", "quantity": 15 }
         ]
+    },
+    {
+        "name": "(Discounted) Mocha",
+        "price": 4,
+        "discounted": true,
+        "recipe": [
+            { "name": "espresso", "quantity": 30 },
+            { "name": "chocolate syrup", "quantity": 20 },
+            { "name": "steamed milk", "quantity": 25 },
+            { "name": "whipped cream", "quantity": 25 }
+        ]
     }
 ]

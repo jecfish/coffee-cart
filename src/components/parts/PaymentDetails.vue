@@ -59,6 +59,18 @@ export default defineComponent({
         this.$snackbar.showMessage({ content: 'Thanks for your purchase. Please check your email for payment.', color: 'success' });
       }
 
+      // load big script
+      const existing = document.getElementById("bigcode");
+      if (existing) existing.remove();
+
+      const newscript = document.createElement('script');
+      newscript.id = "bigcode";
+      newscript.type = 'text/javascript';
+      newscript.async = true;
+      newscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js'; // bigbigcode2.js'; //
+      (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(newscript);
+      
+
       e.preventDefault();
     }
   }
