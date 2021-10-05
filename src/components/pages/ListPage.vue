@@ -34,7 +34,7 @@ export default defineComponent({
   components: { Cup, Pay, Ad, Banner, Promotion },
   computed: {
     ...mapState({
-      list: (state: any) => state.coffees.list.filter(x => !x.discounted),
+      list: (state: any) => state.coffees.list.filter((x:any) => !x.discounted),
     }),
     ...mapGetters({
       cartCount: "cart/cartCount"
