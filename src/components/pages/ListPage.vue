@@ -58,7 +58,7 @@ export default defineComponent({
     currency,
     ...mapMutations("cart", ["addToCart"]),
     togglePromo(count: number) {
-      this.showPromo = (count) % 3 == 0;
+      this.showPromo = (count) % 4 == 0;
       return;
     },
     closedPromo() {

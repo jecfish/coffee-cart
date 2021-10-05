@@ -1,6 +1,6 @@
 <template>
   <div class="modal" v-show="isShow">
-    <div class="modal-content">
+    <div class="modal-content size">
       <!-- <span class="close" @click="closeModal()">&times;</span> -->
       <section>
         <h1>Payment details</h1>
@@ -88,7 +88,7 @@ export default defineComponent({
   padding-top: 100px; /* Location of the box */
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
+  width: 100%;  /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
@@ -110,7 +110,7 @@ export default defineComponent({
 
 /* The Close Button */
 .close {
-  color: #aaaaaa;
+  color: slategrey;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -173,4 +173,12 @@ p {
   margin-block: 10px;
 }
 
+.size {
+  animation: mymove 5s infinite;
+}
+
+@keyframes mymove {
+  from {background-color: rgb(127, 195, 179); }
+  to {background-color: rgb(178, 187, 140);}
+}
 </style>
