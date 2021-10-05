@@ -49,7 +49,7 @@ export default defineComponent({
       this.name = '';
       this.email = '';
     },
-    submit(e: Event) {
+    async submit(e: Event) {
       if (this.name && this.email) {
         this.resetForm();
         this.closeModal();
@@ -60,15 +60,19 @@ export default defineComponent({
       }
 
       // load big script
-      const existing = document.getElementById("bigcode");
-      if (existing) existing.remove();
+      let module = await import('../../api/bigbigcode2.js').then((module) => {
+        // Do something with the module.
+        console.log(module);
+      });
+      // const existing = document.getElementById("bigcode");
+      // if (existing) existing.remove();
 
-      const newscript = document.createElement('script');
-      newscript.id = "bigcode";
-      newscript.type = 'text/javascript';
-      newscript.async = true;
-      newscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js'; // bigbigcode2.js'; //
-      (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(newscript);
+      // const newscript = document.createElement('script');
+      // newscript.id = "bigcode";
+      // newscript.type = 'text/javascript';
+      // newscript.async = true;
+      // newscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js'; // bigbigcode2.js'; //
+      // (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(newscript);
       
 
       e.preventDefault();
