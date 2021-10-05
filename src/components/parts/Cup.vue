@@ -1,6 +1,6 @@
 <template>
-  <div class="cup">
-    <div class="cup-body">
+  <div class="cup" :class="{ 'disabled-hover' : disabled }">
+    <div class="cup-body" :class="{ 'disabled-hover' : disabled }">
       <div
         v-for="ingredient in item.recipe"
         :key="ingredient.name"
@@ -8,7 +8,7 @@
         :style="{ height: ingredient.quantity + '%'}"
       >{{ ingredient.quantity ? ingredient.name : '' }}</div>
     </div>
-    <div class="cup-handler"></div>
+    <div class="cup-handler" :class="{ 'disabled-hover' : disabled }"></div>
   </div>
 </template>
 
@@ -17,7 +17,7 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'Cup',
-  props: ['item']
+  props: ['item', 'disabled']
 })
 </script>
 
@@ -65,6 +65,16 @@ export default defineComponent({
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.disabled-hover {
+  pointer-events: none;
+  border-color: initial;
+}
+
+.disabled-hover:hover {
+  pointer-events: none;
+  border-color: black;
 }
 
 /* recipe */

@@ -44,10 +44,20 @@ export default defineComponent({
       cartList: "cart/cartList"
     }),
   },
+  // data() {
+  //   return {
+  //     cartList: null
+  //   }
+  // },
   methods: {
     currency,
     ...mapActions("cart", []),
     ...mapMutations("cart", ["addOneCartItem", "removeOneCartItem", "removeCartItem"])
+  },
+  created() {
+    // setTimeout(() => {
+    //   this.cartList = this.$store.getters['cart/cartList'];
+    // }, 3000) as any;
   }
 })
 </script>

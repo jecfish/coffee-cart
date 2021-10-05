@@ -1,5 +1,6 @@
 <template>
   <Banner v-if="showAd" />
+  <Promotion v-if="showPromo" @close="closedPromo()" />
   <div>
     <ul>
       <li v-for="coffee in list" :key="coffee.name">
@@ -8,7 +9,7 @@
           <br />
           <small>{{ currency(coffee.price) }}</small>
         </h4>
-        <div class="cup" @click="addToCart(coffee.name)">
+        <div @click="addToCart(coffee.name);togglePromo(cartCount);">
           <Cup :item="coffee" />
         </div>
       </li>
@@ -20,24 +21,29 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { mapState, mapMutations } from 'vuex';
+import { mapState, mapMutations, mapGetters } from 'vuex';
 import { currency } from '../../utils';
 import Cup from '../parts/Cup.vue';
 import Pay from '../parts/Pay.vue';
 import Ad from '../parts/Ad.vue';
 import Banner from '../parts/Banner.vue';
+import Promotion from '../parts/Promotion.vue';
 
 export default defineComponent({
   name: "ListPage",
-  components: { Cup, Pay, Ad, Banner },
+  components: { Cup, Pay, Ad, Banner, Promotion },
   computed: {
     ...mapState({
-      list: (state: any) => state.coffees.list,
+      list: (state: any) => state.coffees.list.filter(x => !x.discounted),
     }),
+    ...mapGetters({
+      cartCount: "cart/cartCount"
+    })
   },
   data() {
     return {
       showAd: this.$route.query.ad,
+      showPromo: false,
       waitTime: 1600
     }
   },
@@ -51,6 +57,13 @@ export default defineComponent({
   methods: {
     currency,
     ...mapMutations("cart", ["addToCart"]),
+    togglePromo(count: number) {
+      this.showPromo = (count) % 3 == 0;
+      return;
+    },
+    closedPromo() {
+      this.showPromo = false;
+    }
   },
 });
 </script>
