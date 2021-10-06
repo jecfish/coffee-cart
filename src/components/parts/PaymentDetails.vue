@@ -7,7 +7,7 @@
         <button class="close" @click="closeModal()">&times;</button>
       </section>
       <p>We will send you a payment link via email.</p>
-      <form @submit="submit">
+      <form @submit.prevent="submit">
         <div>
           <label for="name">Name</label>
           <input type="text" name="name" id="name" v-model="name" required>
@@ -49,7 +49,7 @@ export default defineComponent({
       this.name = '';
       this.email = '';
     },
-    async submit(e: Event) {
+    async submit() {
       if (this.name && this.email) {
         // blocking
         await this.slow();
@@ -61,8 +61,6 @@ export default defineComponent({
         this.$router.push('/');
         this.$snackbar.showMessage({ content: 'Thanks for your purchase. Please check your email for payment.', color: 'success' });
       }
-
-      e.preventDefault();
     },
     async slow() {
       const longTask = await import('../../api/slow.js');

@@ -56,6 +56,7 @@ export default defineComponent({
   font-size: x-large;
   border-block: 4px solid black;
   text-align: center;
+  cursor: move;
 }
 
 .success {
