@@ -10,11 +10,11 @@
       <form @submit.prevent="submit">
         <div>
           <label for="name">Name</label>
-          <input type="text" name="name" id="name" v-model="name" required>
+          <input type="text" name="name" id="name" v-model="name" autocomplete="off" required>
         </div>
         <div>
           <label for="email">Email</label>
-          <input type="email" name="email" id="email" v-model="email" required>
+          <input type="email" name="email" id="email" v-model="email" autocomplete="off" required>
         </div>
         <div>
           <input type="checkbox" name="promotion" id="promotion">
