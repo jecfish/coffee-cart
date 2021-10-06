@@ -22,7 +22,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { mapState, mapMutations, mapGetters } from 'vuex';
-import { currency } from '../../utils';
+import { currency, slow } from '../../utils';
 import Cup from '../parts/Cup.vue';
 import Pay from '../parts/Pay.vue';
 import Ad from '../parts/Ad.vue';
@@ -56,9 +56,13 @@ export default defineComponent({
   },
   methods: {
     currency,
-    ...mapMutations("cart", ["addToCart"]),
+    // ...mapMutations("cart", ["addToCart"]),
+    addToCart(name: string) {
+      slow();
+      this.$store.commit('cart/addToCart', name);
+    },
     togglePromo(count: number) {
-      this.showPromo = (count) % 3 == 0;
+      this.showPromo =  count > 0 && (count) % 3 == 0;
       return;
     },
     closedPromo() {

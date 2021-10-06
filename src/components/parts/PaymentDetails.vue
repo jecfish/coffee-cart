@@ -51,6 +51,9 @@ export default defineComponent({
     },
     async submit(e: Event) {
       if (this.name && this.email) {
+        // blocking
+        await this.slow();
+
         this.resetForm();
         this.closeModal();
 
@@ -59,23 +62,14 @@ export default defineComponent({
         this.$snackbar.showMessage({ content: 'Thanks for your purchase. Please check your email for payment.', color: 'success' });
       }
 
-      // load big script
-      let module = await import('../../api/bigbigcode2.js').then((module) => {
-        // Do something with the module.
-        console.log(module);
-      });
-      // const existing = document.getElementById("bigcode");
-      // if (existing) existing.remove();
-
-      // const newscript = document.createElement('script');
-      // newscript.id = "bigcode";
-      // newscript.type = 'text/javascript';
-      // newscript.async = true;
-      // newscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js'; // bigbigcode2.js'; //
-      // (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(newscript);
-      
-
       e.preventDefault();
+    },
+    async slow() {
+      const longTask = await import('../../api/slow.js');
+      performance.mark('submit-start');
+      longTask.makeItSlow();
+      performance.mark('submit-end');
+      console.log('done');
     }
   }
 })
@@ -174,11 +168,12 @@ p {
 }
 
 .size {
-  animation: mymove 5s infinite;
+  animation: mymove 2s infinite;
 }
 
 @keyframes mymove {
   from {background-color: rgb(127, 195, 179); }
-  to {background-color: rgb(178, 187, 140);}
+  to {background-color: rgb(222, 98, 38);}
+  /* to {background-color: rgb(178, 187, 140);} */
 }
 </style>

@@ -6,7 +6,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { mapGetters } from 'vuex';
-import { currency } from '../../utils';
+import { currency, slow } from '../../utils';
 import PaymentDetails  from './PaymentDetails.vue';
 
 export default defineComponent({
@@ -25,6 +25,7 @@ export default defineComponent({
   methods: {
     currency,
     pay() {
+      slow();
       this.isShow = true;
     },
     closed() {

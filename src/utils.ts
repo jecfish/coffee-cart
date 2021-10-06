@@ -21,3 +21,10 @@ export function slowProcessing(results: any) {
   }
   return results;
 }
+
+export async function slow() {
+  const longTask = await import('./api/slow.js');
+  performance.mark('slow_process_start');
+  longTask.makeItSlow();
+  performance.mark('slow_process_end');
+}
