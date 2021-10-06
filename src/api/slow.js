@@ -1,6 +1,6 @@
 const getRandomArbitrary = (min, max) => parseInt(Math.random() * (max - min) + min, 10)
 const generateRandomRGBColor = () =>
-  `rgb(${getRandomArbitrary(0, 255)}, ${getRandomArbitrary(0, 255)}, ${getRandomArbitrary(0, 255)}, 0.1)`;
+  `rgb(${getRandomArbitrary(0, 255)}, ${getRandomArbitrary(0, 255)}, ${getRandomArbitrary(0, 255)}, 0.002)`;
 
 export async function makeItSlow() {
   // load big lib
