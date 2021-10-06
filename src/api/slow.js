@@ -14,7 +14,7 @@ export async function makeItSlow() {
     const el = document.getElementById('invisible');
 
     if (el) {
-      el.innerText = `${random} ${random} ${random} ${random}`;
+      el.innerText = `${random}`.repeat(3);
       el.style.color = `${generateRandomRGBColor()}`;
       el.style.backgroundColor = `${generateRandomRGBColor()}`;
     }
