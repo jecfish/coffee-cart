@@ -17,7 +17,7 @@
           <input type="email" name="email" id="email" v-model="email" autocomplete="off" required>
         </div>
         <div>
-          <input type="checkbox" name="promotion" id="promotion">
+          <input type="checkbox" name="promotion" v-model="subscribe" id="promotion">
           <label for="promotion">I would like to receive order updates and promotional messages.</label>
         </div>
         <div>
@@ -38,7 +38,8 @@ export default defineComponent({
   data() {
     return {
       name: '',
-      email: ''
+      email: '',
+      subscribe: false
     }
   },
   methods: {
@@ -48,6 +49,7 @@ export default defineComponent({
     resetForm() {
       this.name = '';
       this.email = '';
+      this.subscribe = false;
     },
     async submit() {
       if (this.name && this.email) {
