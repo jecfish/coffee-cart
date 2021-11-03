@@ -15,7 +15,7 @@
           <div>
             <span class="unit-desc">{{ currency(item.unitPrice) }} x {{ item.quantity }}</span>
             <div class="unit-controller">
-              <button :aria-label="'Add one' + item.name" type="button" @click="addOneCartItem(item.name)">+</button>
+              <button :aria-label="'Add one ' + item.name" type="button" @click="addOneCartItem(item.name)">+</button>
               <button :aria-label="'Remove one ' + item.name" type="button" @click="removeOneCartItem(item.name)">-</button>
             </div>
           </div>
