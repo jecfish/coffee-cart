@@ -16,7 +16,7 @@
           <label for="email">Email</label>
           <input type="email" name="email" id="email" v-model="email" autocomplete="off" required>
         </div>
-        <div>
+        <div aria-label="Promotion agreement">
           <input type="checkbox" name="promotion" v-model="subscribe" id="promotion">
           <label for="promotion">I would like to receive order updates and promotional messages.</label>
         </div>
