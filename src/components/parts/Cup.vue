@@ -1,10 +1,10 @@
 <template>
   <div class="cup" :class="{ 'disabled-hover' : disabled }">
-    <div class="cup-body" :class="{ 'disabled-hover' : disabled }">
+    <div class="cup-body" :aria-label="item.name" :class="{ 'disabled-hover' : disabled }">
       <div
         v-for="ingredient in item.recipe"
         :key="ingredient.name"
-        :class="['ingredient', ingredient.name]"
+        :class="['ingredient', ingredient.name, 'disabled-hover']"
         :style="{ height: ingredient.quantity + '%'}"
       >{{ ingredient.quantity ? ingredient.name : '' }}</div>
     </div>
@@ -24,6 +24,7 @@ export default defineComponent({
 <style scoped>
 .cup {
   display: flex;
+  will-change: transform;
 }
 
 .cup-body {

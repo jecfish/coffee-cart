@@ -7,7 +7,7 @@
         <button class="close" @click="closeModal()">&times;</button>
       </section>
       <p>We will send you a payment link via email.</p>
-      <form @submit.prevent="submit">
+      <form @submit.prevent="submit" aria-label="Payment form">
         <div>
           <label for="name">Name</label>
           <input type="text" name="name" id="name" v-model="name" autocomplete="off" required>

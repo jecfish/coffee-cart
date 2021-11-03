@@ -1,10 +1,10 @@
 <template>
   <ul>
     <li>
-      <router-link to="/">menu</router-link>
+      <router-link aria-label="Menu page" to="/">menu</router-link>
     </li>
     <li>
-      <router-link to="/cart">cart ({{ cartCount }})</router-link>
+      <router-link aria-label="Cart page" to="/cart">cart ({{ cartCount }})</router-link>
     </li>
   </ul>
 </template>

@@ -10,18 +10,18 @@
           <div>Total</div>
           <div></div>
         </li>
-        <li v-for="item in cartList" :key="item.name">
+        <li v-for="item in cartList" :key="item.name" class="list-item">
           <div>{{ item.name }}</div>
           <div>
             <span class="unit-desc">{{ currency(item.unitPrice) }} x {{ item.quantity }}</span>
             <div class="unit-controller">
-              <button type="button" @click="addOneCartItem(item.name)">+</button>
-              <button type="button" @click="removeOneCartItem(item.name)">-</button>
+              <button aria-label="Add item" type="button" @click="addOneCartItem(item.name)">+</button>
+              <button aria-label="Remove item" type="button" @click="removeOneCartItem(item.name)">-</button>
             </div>
           </div>
           <div>{{ currency(item.price) }}</div>
           <div>
-            <button class="delete" type="button" @click="removeCartItem(item.name)">x</button>
+            <button aria-label="Remove item" class="delete" type="button" @click="removeCartItem(item.name)">x</button>
           </div>
         </li>
       </ul>
