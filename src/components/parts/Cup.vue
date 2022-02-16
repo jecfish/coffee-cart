@@ -1,6 +1,6 @@
 <template>
   <div class="cup" :class="{ 'disabled-hover' : disabled }">
-    <div class="cup-body" :aria-label="item.name" :class="{ 'disabled-hover' : disabled }">
+    <div class="cup-body" :aria-label="item.name" :class="{ 'disabled-hover' : disabled }" :data-test="item.name.replace(' ', '_')" :data-cy="item.name.replace(' ', '-')">
       <div
         v-for="ingredient in item.recipe"
         :key="ingredient.name"
