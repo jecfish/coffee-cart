@@ -15,7 +15,7 @@
       </li>
     </ul>
     <Pay />
-    <Ad v-if="showAd" />
+    <!-- <Ad v-if="showAd" /> -->
   </div>
 </template>
 
@@ -50,6 +50,25 @@ export default defineComponent({
   created() {
     if (this.showAd) {
       this.$store.commit('coffees/setWaitTime', this.waitTime);
+
+      const newStyle = document.createElement('style');
+      newStyle.appendChild(document.createTextNode(`
+        @font-face {
+          font-family: 'Lobster';
+          font-style: normal;
+          font-weight: 400;
+          src: url(https://fonts.gstatic.com/s/lobster/v27/neILzCirqoswsqX9zoKmM4MwWJU.woff2) format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        body {
+          font-family: 'Lobster';
+        }
+      `));
+
+      setTimeout(() => {
+        document.head.appendChild(newStyle);
+      }, 2400) as any;
     }
 
     this.$store.dispatch("coffees/getCoffeeList");
@@ -98,19 +117,15 @@ button:hover {
 }
 
 :deep(.pay) {
-  display: none;
+  display: block;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
 }
 
 @media (min-width: 500px) {
   ul {
     grid-template-columns: repeat(2, auto);
-  }
-
-  :deep(.pay) {
-    display: block;
-    position: fixed;
-    right: 10px;
-    bottom: 10px;
   }
 }
 

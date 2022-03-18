@@ -36,14 +36,14 @@ export default defineComponent({
 </script>
 
 <style scoped>
-div {
+/* div {
   display: flex;
   justify-content: center;
 }
 
 img {
   max-width: 80%;
-}
+} */
 
 .fade-enter-active,
 .fade-leave-active {

@@ -1,5 +1,5 @@
 <template>
-  <button class="pay" type="button" aria-label="Proceed to checkout" @click="pay()">Total: {{ currency(total) }}</button>
+  <button data-test="checkout" class="pay" type="button" aria-label="Proceed to checkout" @click="pay()">Total: {{ currency(total) }}</button>
   <PaymentDetails :isShow="isShow" @close="closed()" />
 </template>
 
