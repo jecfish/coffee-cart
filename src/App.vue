@@ -1,6 +1,6 @@
 <template>
-  <Header />
-  <Snackbar />
+  <Header v-show="showTemplate" />
+  <Snackbar v-show="showTemplate" />
   <router-view />
 </template>
 
@@ -14,6 +14,16 @@ export default defineComponent({
   components: {
     Header,
     Snackbar
+  },
+  data() {
+    return {
+      showTemplate: true
+    }
+  },
+  created() {
+    if (window.location.href.endsWith('/ad')) {
+      this.showTemplate = false
+    }
   }
 })
 </script>

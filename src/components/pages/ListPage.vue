@@ -1,5 +1,6 @@
 <template>
-  <Banner v-if="showAd" />
+  <!-- <Banner v-if="showAd" /> -->
+  <iframe ref="iframe" v-if="showAd" src="/ad" height="1" width="1" scrolling="no" frameborder="0"></iframe>
   <Promotion v-if="showPromo" @close="closedPromo()" />
   <div>
     <ul>
@@ -49,6 +50,8 @@ export default defineComponent({
   },
   created() {
     if (this.showAd) {
+      window.addEventListener('message', () => { this.resizeFrame(); });
+
       this.$store.commit('coffees/setWaitTime', this.waitTime);
 
       setTimeout(() => {
@@ -88,6 +91,15 @@ export default defineComponent({
     },
     closedPromo() {
       this.showPromo = false;
+    },
+    resizeFrame() {
+      // setTimeout(() => {
+      const iframe = this.$refs.iframe as HTMLIFrameElement;
+      iframe.width = window.innerWidth + 'px';
+      iframe.height = '300px';
+      // }, this.waitTime * 1.7); 
+      // console.log('resize')
+    
     }
   },
 });

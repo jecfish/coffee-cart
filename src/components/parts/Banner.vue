@@ -47,7 +47,7 @@ div {
 
 img {
   min-height: 100px;
-  max-height: 50vh;
+  /* max-height: 50vh; */
 }
 
 .fade-enter-active,
