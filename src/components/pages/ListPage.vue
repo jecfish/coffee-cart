@@ -45,16 +45,17 @@ export default defineComponent({
     return {
       showAd: this.$route.query.ad,
       showPromo: false,
-      waitTime: 1500
+      waitTime: 1500,
+      timeoutId: null,
     }
   },
   created() {
     if (this.showAd) {
-      window.addEventListener('message', () => { this.resizeFrame(); });
+      window.addEventListener('message', this.resizeFrame);
 
       this.$store.commit('coffees/setWaitTime', this.waitTime);
 
-      setTimeout(() => {
+      this.timeoutId = setTimeout(() => {
         const newStyle = document.createElement('style');
         newStyle.appendChild(document.createTextNode(`
           @font-face {
@@ -62,6 +63,8 @@ export default defineComponent({
             font-style: normal;
             font-weight: 400;
             size-adjust: 120%;
+            line-gap-override: 130%;
+            descent-override: 30%;
             src: url(https://fonts.gstatic.com/s/lobster/v27/neILzCirqoswsqX9zoKmM4MwWJU.woff2) format('woff2');
             unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
           }
@@ -77,6 +80,14 @@ export default defineComponent({
     }
 
     this.$store.dispatch("coffees/getCoffeeList");
+  },
+  unmounted() {
+    window.removeEventListener('message', this.resizeFrame);
+
+    if (this.timeoutId) {
+      clearTimeout(this.timeoutId as any);
+      this.timeoutId = null;
+    }
   },
   methods: {
     currency,

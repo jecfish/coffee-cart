@@ -31,6 +31,12 @@ export default defineComponent({
     this.timeoutId = setTimeout(() => {
       this.show = true;
     }, this.timeout) as any;
+  },
+  unmounted() {
+    if (this.timeoutId) {
+      clearTimeout(this.timeoutId as any);
+      this.timeoutId = null;
+    }
   }
 })
 </script>
