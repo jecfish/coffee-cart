@@ -1,6 +1,6 @@
 <template>
-  <!-- <Banner v-if="showAd" /> -->
-  <iframe ref="iframe" v-if="showAd" src="/ad" height="1" width="1" scrolling="no" frameborder="0"></iframe>
+  <Banner v-if="showAd" />
+  <!-- <iframe ref="iframe" v-if="showAd" src="/ad" height="1" width="1" scrolling="no" frameborder="0"></iframe> -->
   <Promotion v-if="showPromo" @close="closedPromo()" />
   <div>
     <ul>
