@@ -53,7 +53,7 @@ export default defineComponent({
     if (this.showAd) {
       window.addEventListener('message', this.resizeFrame);
 
-      this.$store.commit('coffees/setWaitTime', this.waitTime);
+      this.$store.commit('coffees/setWaitTime', 500);
 
       this.timeoutId = setTimeout(() => {
         const newStyle = document.createElement('style');
@@ -71,7 +71,7 @@ export default defineComponent({
 
         `));
         document.head.appendChild(newStyle);
-      }, this.waitTime * 1.5) as any;
+      }, 4200) as any;
 
       slow();
     }
