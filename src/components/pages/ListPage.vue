@@ -45,7 +45,7 @@ export default defineComponent({
     return {
       showAd: this.$route.query.ad,
       showPromo: false,
-      waitTime: 1500,
+      waitTime: 1000,
       timeoutId: null,
     }
   },

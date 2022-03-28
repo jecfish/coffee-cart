@@ -41,6 +41,7 @@ button.pay {
   background: antiquewhite;
   margin: 0 6px;
   font-size: xx-large;
+  padding: 6px 10px;
 }
 
 button.pay:hover {

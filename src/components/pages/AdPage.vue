@@ -12,7 +12,7 @@ export default defineComponent({
   mounted() {
     setTimeout(() => {
       parent.postMessage('AdLoaded', '*');
-    }, 2600); 
+    }, 2200); 
     // console.log(parent);
   }
 })
