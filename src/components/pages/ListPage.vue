@@ -58,24 +58,11 @@ export default defineComponent({
       this.$store.commit('coffees/setWaitTime', this.waitTime * .5);
 
       this.timeoutId = setTimeout(() => {
-        const newStyle = document.createElement('style');
         this.renderAd = true;
-        newStyle.appendChild(document.createTextNode(`
-          @font-face {
-            font-family: 'Lobster';
-            font-style: normal;
-            font-weight: 400;
-            size-adjust: 140%;
-            line-gap-override: 150%;
-            descent-override: 30%;
-            src: url(https://fonts.gstatic.com/s/lobster/v27/neILzCirqoswsqX9zoKmM4MwWJU.woff2) format('woff2');
-            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-          }
+        this.renderFonts();
 
-        `));
-        document.head.appendChild(newStyle);
-        this.isBigger = true;
-      }, this.waitTime * 3) as any;
+      }, this.waitTime * 2.5) as any;
+
 
       slow();
     }
@@ -112,6 +99,27 @@ export default defineComponent({
       // }, this.waitTime * 1.7); 
       // console.log('resize')
     
+    },
+    renderFonts() {
+      this.timeoutId = setTimeout(() => {
+        const newStyle = document.createElement('style');
+        this.renderAd = true;
+        newStyle.appendChild(document.createTextNode(`
+          @font-face {
+            font-family: 'Lobster';
+            font-style: normal;
+            font-weight: 400;
+            size-adjust: 140%;
+            line-gap-override: 150%;
+            descent-override: 30%;
+            src: url(https://fonts.gstatic.com/s/lobster/v27/neILzCirqoswsqX9zoKmM4MwWJU.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+          }
+
+        `));
+        document.head.appendChild(newStyle);
+        this.isBigger = true;
+      }, this.waitTime * 1.5) as any;
     }
   },
 });
