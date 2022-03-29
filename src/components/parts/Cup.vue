@@ -1,6 +1,6 @@
 <template>
   <div class="cup" :class="{ 'disabled-hover' : disabled }">
-    <div class="cup-body" :aria-label="item.name" :class="{ 'disabled-hover' : disabled }" :data-test="item.name.replace(' ', '_')" :data-cy="item.name.replace(' ', '-')">
+    <div class="cup-body" :aria-label="item.name" :class="{ 'disabled-hover' : disabled, bigger: isBigger }" :data-test="item.name.replace(' ', '_')" :data-cy="item.name.replace(' ', '-')">
       <div
         v-for="ingredient in item.recipe"
         :key="ingredient.name"
@@ -17,7 +17,7 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'Cup',
-  props: ['item', 'disabled']
+  props: ['item', 'disabled', 'isBigger']
 })
 </script>
 
@@ -35,6 +35,11 @@ export default defineComponent({
   flex-direction: column-reverse;
   border-radius: 0px 0px 20px 20px;
   overflow: hidden;
+}
+
+.cup-body.bigger {
+  height: 240px;
+  width: 220px;
 }
 
 .cup-handler {
