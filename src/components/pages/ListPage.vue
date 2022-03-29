@@ -1,5 +1,5 @@
 <template>
-  <Banner v-if="showAd" />
+  <Banner v-if="renderAd" />
   <!-- <iframe ref="iframe" v-if="showAd" src="/ad" height="1" width="1" scrolling="no" frameborder="0"></iframe> -->
   <Promotion v-if="showPromo" @close="closedPromo()" />
   <div>
@@ -44,6 +44,7 @@ export default defineComponent({
   data() {
     return {
       showAd: this.$route.query.ad,
+      renderAd: false,
       showPromo: false,
       waitTime: 1000,
       timeoutId: null,
@@ -58,6 +59,7 @@ export default defineComponent({
 
       this.timeoutId = setTimeout(() => {
         const newStyle = document.createElement('style');
+        this.renderAd = true;
         newStyle.appendChild(document.createTextNode(`
           @font-face {
             font-family: 'Lobster';
