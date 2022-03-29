@@ -1,6 +1,6 @@
 <template>
   <transition name="fade">
-    <div v-show="show">
+    <div>
       <img src="/banner.jpg" role="button" alt="free 1 bag of coffe beans advertisement" @click="close()">
     </div>
   </transition>
