@@ -53,6 +53,7 @@ div {
 
 img {
   min-height: 100px;
+  overflow: auto;
   /* max-height: 50vh; */
 }
 
