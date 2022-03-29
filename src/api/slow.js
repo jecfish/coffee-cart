@@ -7,7 +7,7 @@ export async function makeItSlow() {
   const useless = await import('./bigbigcode2.js');
   console.log(useless);
 
-  const shouldPrint = true;
+  let shouldPrint = true;
 
   `rgba(${getRandomArbitrary(0, 255)}, ${getRandomArbitrary(0, 255)}, ${getRandomArbitrary(0, 255)}, 0.002)`;
   for (let i = 0; i < 10000; i++) {
