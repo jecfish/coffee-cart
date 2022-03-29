@@ -14,7 +14,7 @@ export default defineComponent({
   data() {
     return {
       show: false,
-      timeout: 2800,
+      timeout: 1000,
       timeoutId: null,
     }
   },
@@ -30,7 +30,7 @@ export default defineComponent({
   created() {
     this.timeoutId = setTimeout(() => {
       this.show = true;
-    }, this.timeout) as any;
+    }, this.timeout * 1.5) as any;
   },
   unmounted() {
     if (this.timeoutId) {
@@ -53,6 +53,8 @@ div {
 
 img {
   min-height: 100px;
+  max-height: 50vh;
+  overflow: auto;
   /* max-height: 50vh; */
 }
 
