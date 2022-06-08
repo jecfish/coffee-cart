@@ -108,6 +108,7 @@ export default defineComponent({
           @font-face {
             font-family: 'Lobster';
             font-style: normal;
+            font-display: swap;
             font-weight: 400;
             size-adjust: 140%;
             line-gap-override: 150%;
