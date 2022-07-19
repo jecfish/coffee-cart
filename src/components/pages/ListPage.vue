@@ -2,7 +2,7 @@
   <Banner v-if="renderAd" />
   <!-- <iframe ref="iframe" v-if="showAd" src="/ad" height="1" width="1" scrolling="no" frameborder="0"></iframe> -->
   <Promotion v-if="showPromo" @close="closedPromo()" />
-  <div>
+  <div id="coffee-list-container">
     <ul>
       <li v-for="coffee in list" :key="coffee.name">
         <h4>
@@ -116,9 +116,15 @@ export default defineComponent({
             src: url(https://fonts.gstatic.com/s/lobster/v27/neILzCirqoswsqX9zoKmM4MwWJU.woff2) format('woff2');
             unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
           }
-
+          .relative-positioned {
+            position: relative;
+            top: 50px;
+          }
         `));
         document.head.appendChild(newStyle);
+        const coffeeListContainer = document.querySelector('#coffee-list-container'); 
+        coffeeListContainer.classList.add('relative-positioned');
+        console.log(div.offsetHeight);
         this.isBigger = true;
       }, this.waitTime * 1.5) as any;
     }
