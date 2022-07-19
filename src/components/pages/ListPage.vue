@@ -122,9 +122,11 @@ export default defineComponent({
           }
         `));
         document.head.appendChild(newStyle);
-        const coffeeListContainer = document.querySelector('#coffee-list-container'); 
-        coffeeListContainer.classList.add('relative-positioned');
-        console.log(div.offsetHeight);
+        const coffeeListContainer = document.querySelector('#coffee-list-container');
+        if (coffeeListContainer instanceof HTMLElement) {
+          coffeeListContainer.classList.add('relative-positioned');
+          console.log(coffeeListContainer.offsetHeight);
+        }
         this.isBigger = true;
       }, this.waitTime * 1.5) as any;
     }
