@@ -5,8 +5,8 @@
   <div>
     <ul>
       <li v-for="coffee in list" :key="coffee.name">
-        <h4>
-          {{ coffee.name }}
+        <h4 @dblclick="translate(coffee.name)">
+          {{ coffee.isTranslated? translation[coffee.name] : coffee.name }}
           <br />
           <small>{{ currency(coffee.price) }}</small>
         </h4>
@@ -47,7 +47,7 @@ export default defineComponent({
     }),
     ...mapGetters({
       cartCount: "cart/cartCount"
-    })
+    }),
   },
   data() {
     return {
@@ -57,7 +57,18 @@ export default defineComponent({
       waitTime: 1000,
       timeoutId: null,
       isBigger: false,
-      selectedCoffee: ''
+      selectedCoffee: '',
+      translation: {
+        'Espresso': '特浓咖啡',
+        'Espresso Macchiato': '浓缩玛奇朵',
+        'Cappucino': '卡布奇诺',
+        'Mocha': '摩卡',
+        'Flat White': '平白咖啡',
+        'Americano': '美式咖啡',
+        'Cafe Latte': '拿铁',
+        'Espresso Con Panna': '浓缩康宝蓝',
+        'Cafe Breve': '半拿铁',
+      } as any
     }
   },
   created() {
@@ -134,7 +145,10 @@ export default defineComponent({
         document.head.appendChild(newStyle);
         this.isBigger = true;
       }, this.waitTime * 1.5) as any;
-    }
+    },
+    translate(coffee: string) {
+      this.$store.commit('coffees/translateCoffee', coffee);
+    },
   },
 });
 </script>

@@ -33,6 +33,12 @@ const mutations = {
   getListFailure(state: any) {
     state.list = [];
   },
+  translateCoffee(state: any, coffee: any) {
+    const selected = state.list.find((x: any) => x.name === coffee) || {}
+    selected.isTranslated = !selected.isTranslated;
+
+    state.list = [...state.list]
+  },
 }
 
 export default {
