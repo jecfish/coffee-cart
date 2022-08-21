@@ -10,7 +10,7 @@
           <br />
           <small>{{ currency(coffee.price) }}</small>
         </h4>
-        <div @click="addToCart(coffee.name);togglePromo(cartCount);">
+        <div @click="addToCart(coffee.name);togglePromo(cartCount);" @contextmenu="showMenu(coffee.name, $event)">
           <Cup :item="coffee" :isBigger="isBigger" />
         </div>
       </li>
@@ -18,6 +18,14 @@
     <Pay />
     <!-- <Ad v-if="showAd" /> -->
   </div>
+
+  <dialog ref="dialog">
+    <p>Add <strong>{{ selectedCoffee }}</strong> to the cart?</p>
+    <form method="dialog">
+      <button @click="addToCart(selectedCoffee)">Yes</button>
+      <button>No</button>
+    </form>
+  </dialog>
 </template>
 
 <script lang="ts">
@@ -48,7 +56,8 @@ export default defineComponent({
       showPromo: false,
       waitTime: 1000,
       timeoutId: null,
-      isBigger: false
+      isBigger: false,
+      selectedCoffee: ''
     }
   },
   created() {
@@ -62,7 +71,6 @@ export default defineComponent({
         this.renderFonts();
 
       }, this.waitTime * 2.5) as any;
-
 
       slow();
     }
@@ -83,6 +91,11 @@ export default defineComponent({
     addToCart(name: string) {
       slow();
       this.$store.commit('cart/addToCart', name);
+    },
+    showMenu(coffee: string, event: Event) {
+      event.preventDefault();
+      this.selectedCoffee = coffee;
+      (this.$refs.dialog as any).showModal();
     },
     togglePromo(count: number) {
       this.showPromo =  count > 0 && (count) % 3 == 0;
