@@ -15,11 +15,11 @@
         </div>
       </li>
     </ul>
-    <Pay />
+    <Pay :isDisablePreview="cartCount == 0" />
     <!-- <Ad v-if="showAd" /> -->
   </div>
 
-  <dialog ref="dialog">
+  <dialog data-cy="add-to-cart-modal" ref="dialog">
     <p>Add <strong>{{ selectedCoffee }}</strong> to the cart?</p>
     <form method="dialog">
       <button @click="addToCart(selectedCoffee)">Yes</button>
@@ -180,9 +180,15 @@ button:hover {
 
 :deep(.pay) {
   display: block;
-  position: fixed;
   right: 10px;
   bottom: 10px;
+  align-self: flex-end;
+}
+
+:deep(.pay-container) {
+  position: fixed;
+  bottom: 0px;
+  right: 10px;
 }
 
 @media (min-width: 500px) {

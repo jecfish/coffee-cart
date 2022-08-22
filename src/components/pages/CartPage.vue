@@ -2,7 +2,7 @@
   <div class="list" v-if="cartList">
     <p v-if="!cartList.length">No coffee, go add some.</p>
     <div v-if="cartList.length">
-      <Pay/>
+      <Pay :isDisablePreview="isHidePayPreview" />
       <ul>
         <li class="list-header">
           <div>Item</div>
@@ -38,6 +38,11 @@ import Pay from "../parts/Pay.vue";
 export default defineComponent({
   name: 'CartPage',
   components: { Pay },
+  data() {
+    return {
+      isHidePayPreview: true
+    }
+  },
   computed: {
     // Option 2
     ...mapGetters({
@@ -178,5 +183,13 @@ li div:last-child {
 
 .unit-desc {
   min-width: 120px;
+}
+
+:deep(.pay-container) {
+  padding: 0;
+}
+
+:deep(.pay) {
+  align-self: flex-start;
 }
 </style>
