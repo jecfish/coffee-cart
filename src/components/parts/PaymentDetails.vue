@@ -10,7 +10,7 @@
       <form @submit.prevent="submit" aria-label="Payment form">
         <div>
           <label for="name">Name</label>
-          <input type="text" name="name" id="name" v-model="name" autocomplete="off" required>
+          <input ref="name" type="text" name="name" id="name" v-model="name" autocomplete="off" required>
         </div>
         <div>
           <label for="email">Email</label>
@@ -40,6 +40,15 @@ export default defineComponent({
       name: '',
       email: '',
       subscribe: false
+    }
+  },
+  watch: {
+    isShow(newVal, _) {
+      if (!newVal) return;
+
+      this.$nextTick(() => {
+        (this.$refs.name as HTMLInputElement).focus();
+      }); 
     }
   },
   methods: {
