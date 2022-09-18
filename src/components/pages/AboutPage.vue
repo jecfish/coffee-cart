@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-   
+   <h3>About Page (TEST)</h3>
     <ul>
       <li>Double click on coffee title to translate it to Chinese.</li>
       <li>Right click on coffee icon to open an add to cart dialog.</li>
