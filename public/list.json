@@ -15,7 +15,7 @@
         ]
     },
     {
-        "name": "Cappucino",
+        "name": "Cappuccino",
         "price": 19,
         "recipe": [
             { "name": "espresso", "quantity": 30 },
