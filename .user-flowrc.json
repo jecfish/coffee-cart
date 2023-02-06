@@ -1,0 +1,15 @@
+{
+  "collect": {
+    "url": "http://127.0.0.1:8080", "ufPath": "./user-flows",
+    "serveCommand" : "npx http-server ./dist", "awaitServeStdout": "Available on:",
+    "config": {
+      "settings": {
+        "onlyCategories": [
+          "performance"
+        ]
+      }
+    }
+  },
+  "persist": { "outPath": "./measures", "format": ["html"] },
+  "assert": {}
+}
