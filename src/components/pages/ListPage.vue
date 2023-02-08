@@ -61,7 +61,7 @@ export default defineComponent({
       translation: {
         'Espresso': '特浓咖啡',
         'Espresso Macchiato': '浓缩玛奇朵',
-        'Cappucino': '卡布奇诺',
+        'Cappuccino': '卡布奇诺',
         'Mocha': '摩卡',
         'Flat White': '平白咖啡',
         'Americano': '美式咖啡',
