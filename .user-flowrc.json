@@ -12,6 +12,6 @@
       }
     }
   },
-  "persist": { "outPath": "./measures", "format": ["md"] },
+  "persist": { "outPath": "./measures", "format": ["md", "stdout"] },
   "assert": {}
 }
