@@ -1,0 +1,34 @@
+name: Flakiness User-Flow Cron
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+
+jobs:
+  user-flow:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: NPM CI
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: User Flow Audit
+        run: npx user-flow
+
+      - name: Compile & CleanUp
+        id: compiler
+        run: node scripts/compile-and-cleanup.js
+
+      - uses: EndBug/add-and-commit@v7
+        with:
+          author_name: github-bot
+          author_email: opensource@push-based.io
+          message: 'Persist Updated Compiled Results'
+          add: '*'
