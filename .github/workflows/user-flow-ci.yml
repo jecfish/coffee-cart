@@ -21,10 +21,7 @@ jobs:
 
       - name: Compile & CleanUp
         id: compiler
-        run: echo"audit_number={node scripts/compile-and-cleanup.js}" >>  $GITHUB_ENV
-
-      - name: Echo Run Number
-        run: echo ${{ env.audit_number }}
+        run: node scripts/compile-and-cleanup.js
 
 #      - uses: EndBug/add-and-commit@v9
 #        with:
