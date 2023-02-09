@@ -6,9 +6,7 @@
     "awaitServeStdout": "4173",
     "config": {
       "settings": {
-        "onlyCategories": [
-          "performance"
-        ]
+        "onlyCategories": ["performance"]
       }
     }
   },
