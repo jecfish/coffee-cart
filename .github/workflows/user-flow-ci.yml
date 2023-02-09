@@ -23,7 +23,8 @@ jobs:
         id: compiler
         run: node scripts/compile-and-cleanup.js
 
-      - uses: EndBug/add-and-commit@v9
+      - uses: EndBug/add-and-commit@v7
         with:
-          author_name: Flakiness Tester Bot
+          author_name: Flakiness-Tester-Bot
           message: 'audit: Test user-flow flakiness in GH with localhost'
+          add: '*'
