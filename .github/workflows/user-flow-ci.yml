@@ -1,8 +1,10 @@
 name: Flakiness User-Flow Cron
 
 on:
+  pull_request:
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '*/5 * * * *'
+
 
 jobs:
   user-flow:
