@@ -18,3 +18,6 @@ jobs:
 
       - name: User Flow Audit
         run: npx user-flow
+
+      - name: Compile & CleanUp
+        run: node scripts/compile-and-cleanup.js
