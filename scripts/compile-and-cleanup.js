@@ -15,5 +15,5 @@ const COMPILED_RESULTS_PATH = 'data/sample-1.json';
     compiledResults.push(extractedResult);
     fs.writeFileSync(COMPILED_RESULTS_PATH, JSON.stringify(compiledResults, null, 2));
     fs.unlinkSync(measureFile);
-    console.log('#', compiledResults.length);
+    console.log('Number of audits in compiled results', compiledResults.length);
 })();
