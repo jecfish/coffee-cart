@@ -10,6 +10,6 @@
       }
     }
   },
-  "persist": { "outPath": "./measures", "format": ["md", "stdout"] },
+  "persist": { "outPath": "./measures", "format": ["json"] },
   "assert": {}
 }
