@@ -1,6 +1,7 @@
 name: Flakiness User-Flow Cron
 
 on:
+  pull_request:
   schedule:
     - cron: '*/15 * * * *'
 
@@ -29,5 +30,6 @@ jobs:
       - uses: EndBug/add-and-commit@v7
         with:
           author_name: github-bot
+          author_email: opensource@push-based.io
           message: 'Persist Updated Compiled Results'
           add: '*'
