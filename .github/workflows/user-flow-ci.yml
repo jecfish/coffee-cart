@@ -1,6 +1,9 @@
-name: user-flow-ci
+name: Flakiness User-Flow Cron
+
 on:
-  pull_request:
+  schedule:
+    - cron: '*/15 * * * *'
+
 jobs:
   user-flow:
     runs-on: ubuntu-latest
