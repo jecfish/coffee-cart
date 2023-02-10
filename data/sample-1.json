@@ -270,5 +270,9 @@
   {
     "fetchTime": "2023-02-10T08:34:54.520Z",
     "performance": 0.96
+  },
+  {
+    "fetchTime": "2023-02-10T08:47:11.995Z",
+    "performance": 0.98
   }
 ]
