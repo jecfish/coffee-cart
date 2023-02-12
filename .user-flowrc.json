@@ -1,14 +1,6 @@
 {
   "collect": {
-    "url": "http://localhost:4173/",
-    "ufPath": "./user-flows",
-    "serveCommand" : "npm run serve",
-    "awaitServeStdout": "4173",
-    "config": {
-      "settings": {
-        "onlyCategories": ["performance"]
-      }
-    }
+    "ufPath": "./user-flows"
   },
   "persist": { "outPath": "./measures", "format": ["json", "stdout"] },
   "assert": {}

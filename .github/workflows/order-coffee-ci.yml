@@ -1,4 +1,4 @@
-name: Flakiness User-Flow Cron - Navigation Performnace
+name: Flakiness User-Flow Cron - Order Coffee
 
 on:
   schedule:
@@ -16,11 +16,8 @@ jobs:
       - name: NPM CI
         run: npm ci
 
-      - name: Build
-        run: npm run build
-
       - name: User Flow Audit
-        run: npx user-flow --ufPath="./user-flows/navigation-perfromance.uf.ts"  --url="http://localhost:4173/" --serveCommand="npm run serve" --awaitServeStdout=4173,
+        run: npx user-flow --ufPath="./user-flows/order-coffee.uf.ts" --url="https://coffee-cart.netlify.app/"
 
       - name: Compile & CleanUp
         id: compiler
