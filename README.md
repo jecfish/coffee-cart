@@ -11,6 +11,7 @@ https://coffee-cart.netlify.app/. This demo created with Vue 3 + Typescript + Vi
 4. A random promo coffee pop up show up when adding every 3rd items to the cart. (e.g. 3, 6, 9, ...)
 5. The add to cart process will be slowing down (intentionally) when the cart has more than 7 items.
 6. Slow down page load performance with ads by passing in an `ads` param (e.g. https://coffee-cart.netlify.app/?ad=1).
+7. Add "Break somthing" button throwing JavaScript Error, by passing `breakable=1` param (e.g.  https://coffee-cart.netlify.app/?breakable=1).
 
 ## To run it with slow performance
 

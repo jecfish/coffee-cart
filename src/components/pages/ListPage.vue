@@ -15,6 +15,9 @@
         </div>
       </li>
     </ul>
+    <div class="break-container">
+      <button class="break-button" v-if="breakable" @click="breakSomething()">Break something</button>
+    </div>
     <Pay :isDisablePreview="cartCount == 0" />
     <!-- <Ad v-if="showAd" /> -->
   </div>
@@ -54,6 +57,7 @@ export default defineComponent({
       showAd: this.$route.query.ad,
       renderAd: false,
       showPromo: false,
+      breakable: this.$route.query.breakable,
       waitTime: 1000,
       timeoutId: null,
       isBigger: false,
@@ -115,14 +119,17 @@ export default defineComponent({
     closedPromo() {
       this.showPromo = false;
     },
+    breakSomething(){
+      throw new Error("Something was broken");
+    },
     resizeFrame() {
       // setTimeout(() => {
       const iframe = this.$refs.iframe as HTMLIFrameElement;
       iframe.width = window.innerWidth + 'px';
       iframe.height = '300px';
-      // }, this.waitTime * 1.7); 
+      // }, this.waitTime * 1.7);
       // console.log('resize')
-    
+
     },
     renderFonts() {
       this.timeoutId = setTimeout(() => {
@@ -215,4 +222,21 @@ li h4 {
   /* text-align: center; */
   margin: 10px 0;
 }
+
+.break-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 0px;
+  left: 10px;
+}
+
+.break-button {
+  border: 4px solid darkred;
+  color: darkred;
+  background: salmon;
+  /* margin: 0 6px; */
+  font-size: xx-large;
+  padding: 6px 10px;}
 </style>
