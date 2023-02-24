@@ -233,10 +233,15 @@ li h4 {
 }
 
 .break-button {
-  border: 4px solid darkred;
-  color: darkred;
+  border: 4px solid;
   background: salmon;
-  /* margin: 0 6px; */
   font-size: xx-large;
-  padding: 6px 10px;}
+  padding: 6px 10px;
+}
+
+button.break-button:hover {
+  border-color: darkred;
+  color: darkred;
+}
+
 </style>
