@@ -16,7 +16,7 @@
       </li>
     </ul>
     <div class="break-container">
-      <button class="break-button" v-if="breakable" @click="breakSomething()">Break something</button>
+      <button class="break-button" aria-label="Break something" v-if="breakable" @click="breakSomething()">Break something</button>
     </div>
     <Pay :isDisablePreview="cartCount == 0" />
     <!-- <Ad v-if="showAd" /> -->
