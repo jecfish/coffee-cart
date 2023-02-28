@@ -106,6 +106,12 @@ export default defineComponent({
     addToCart(name: string) {
       slow();
       this.$store.commit('cart/addToCart', name);
+
+      if (this.$route.query.breakable) {
+        setTimeout(() => {
+          throw new Error("Some analytics cannot be sent");
+        }, 1);
+      }
     },
     showMenu(coffee: string, event: Event) {
       event.preventDefault();
