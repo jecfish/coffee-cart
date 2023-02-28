@@ -15,9 +15,6 @@
         </div>
       </li>
     </ul>
-    <div class="break-container">
-      <button class="break-button" aria-label="Break something" v-if="breakable" @click="breakSomething()">Break something</button>
-    </div>
     <Pay :isDisablePreview="cartCount == 0" />
     <!-- <Ad v-if="showAd" /> -->
   </div>
@@ -125,9 +122,6 @@ export default defineComponent({
     closedPromo() {
       this.showPromo = false;
     },
-    breakSomething(){
-      throw new Error("Something was broken");
-    },
     resizeFrame() {
       // setTimeout(() => {
       const iframe = this.$refs.iframe as HTMLIFrameElement;
@@ -228,26 +222,4 @@ li h4 {
   /* text-align: center; */
   margin: 10px 0;
 }
-
-.break-container {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  bottom: 0px;
-  left: 10px;
-}
-
-.break-button {
-  border: 4px solid;
-  background: salmon;
-  font-size: xx-large;
-  padding: 6px 10px;
-}
-
-button.break-button:hover {
-  border-color: darkred;
-  color: darkred;
-}
-
 </style>
