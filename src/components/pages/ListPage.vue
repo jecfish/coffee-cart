@@ -106,7 +106,7 @@ export default defineComponent({
 
       if (this.$route.query.breakable) {
         setTimeout(() => {
-          throw new Error("Some analytics cannot be sent");
+          throw new Error('Some additional workflow is broken');
         }, 1);
       }
     },
