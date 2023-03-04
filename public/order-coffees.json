@@ -1,0 +1,161 @@
+{
+    "title": "order-coffees",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 400,
+            "height": 812,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://coffee-cart.netlify.app/",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://coffee-cart.netlify.app/",
+                    "title": "Coffee cart"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Espresso"
+                ],
+                [
+                    "[data-test='Espresso']"
+                ],
+                [
+                    "xpath///*[@data-test=\"Espresso\"]"
+                ]
+            ],
+            "offsetY": 170.0280532836914,
+            "offsetX": 185.40187072753906
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Cappuccino"
+                ],
+                [
+                    "[data-test='Cappuccino']"
+                ],
+                [
+                    "xpath///*[@data-test=\"Cappuccino\"]"
+                ]
+            ],
+            "offsetY": 78.24679565429688,
+            "offsetX": 146.40187072753906
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Proceed to checkout"
+                ],
+                [
+                    "[data-test='checkout']"
+                ],
+                [
+                    "xpath///*[@data-test=\"checkout\"]"
+                ],
+                [
+                    "text/Total: $29.00"
+                ]
+            ],
+            "offsetY": 11.796875,
+            "offsetX": 83.1875
+        },
+        {
+            "type": "change",
+            "value": "jec",
+            "selectors": [
+                [
+                    "aria/Name"
+                ],
+                [
+                    "#name"
+                ],
+                [
+                    "xpath///*[@id=\"name\"]"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Tab"
+        },
+        {
+            "type": "keyUp",
+            "key": "Tab",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "jec@fish.com",
+            "selectors": [
+                [
+                    "aria/Email"
+                ],
+                [
+                    "#email"
+                ],
+                [
+                    "xpath///*[@id=\"email\"]"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Promotion message"
+                ],
+                [
+                    "#promotion-label"
+                ],
+                [
+                    "xpath///*[@id=\"promotion-label\"]"
+                ],
+                [
+                    "text/I would like"
+                ]
+            ],
+            "offsetY": 25.515625,
+            "offsetX": 138
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Submit"
+                ],
+                [
+                    "#submit-payment"
+                ],
+                [
+                    "xpath///*[@id=\"submit-payment\"]"
+                ],
+                [
+                    "text/Submit"
+                ]
+            ],
+            "offsetY": 15.125,
+            "offsetX": 28.3515625
+        }
+    ]
+}
