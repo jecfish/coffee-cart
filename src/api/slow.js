@@ -5,7 +5,7 @@ const generateRandomRGBColor = () =>
 export async function makeItSlow() {
   // load big lib
   const useless = await import('./bigbigcode2.js');
-  console.log(useless);
+  console.debug(useless);
 
   let shouldPrint = true;
 
@@ -14,7 +14,7 @@ export async function makeItSlow() {
     let random = 0;
     random = Math.floor(Math.random() * 100);
     const el = document.getElementById('invisible');
-    if (shouldPrint) console.log(random);
+    if (shouldPrint) console.debug(random);
     shouldPrint = false;
 
     if (el) {
