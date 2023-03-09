@@ -3,6 +3,7 @@ import ListPage from './components/pages/ListPage.vue'
 import CartPage from './components/pages/CartPage.vue'
 import AdPage from './components/pages/AdPage.vue'
 import GitHubPage from './components/pages/GitHubPage.vue'
+import AboutPage from './components/pages/AboutPage.vue'
 
 export default createRouter({
   history: createWebHistory(),
