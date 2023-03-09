@@ -54,6 +54,7 @@ export default defineComponent({
       showAd: this.$route.query.ad,
       renderAd: false,
       showPromo: false,
+      breakable: this.$route.query.breakable,
       waitTime: 1000,
       timeoutId: null,
       isBigger: false,
@@ -102,6 +103,12 @@ export default defineComponent({
     addToCart(name: string) {
       slow();
       this.$store.commit('cart/addToCart', name);
+
+      if (this.$route.query.breakable) {
+        setTimeout(() => {
+          throw new Error('Some additional workflow is broken');
+        }, 1);
+      }
     },
     showMenu(coffee: string, event: Event) {
       event.preventDefault();
@@ -120,9 +127,9 @@ export default defineComponent({
       const iframe = this.$refs.iframe as HTMLIFrameElement;
       iframe.width = window.innerWidth + 'px';
       iframe.height = '300px';
-      // }, this.waitTime * 1.7); 
+      // }, this.waitTime * 1.7);
       // console.log('resize')
-    
+
     },
     renderFonts() {
       this.timeoutId = setTimeout(() => {
