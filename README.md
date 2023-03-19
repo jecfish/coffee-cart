@@ -2,7 +2,7 @@
 
 # Coffee cart
 
-https://coffee-cart.netlify.app/. This demo created with Vue 3 + Typescript + Vite.
+https://coffee-cart.app/. This demo created with Vue 3 + Typescript + Vite.
 
 ## Special actions you can do
 1. **Double click** on coffee title to translate it to Chinese.
