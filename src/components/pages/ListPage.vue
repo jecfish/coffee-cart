@@ -105,7 +105,7 @@ export default defineComponent({
       this.$store.commit('cart/addToCart', name);
 
       if (this.$route.query.breakable) {
-        console.error('Some additional workflow is broken');
+        console.error('Some additional workflow is broken.');
       }
     },
     showMenu(coffee: string, event: Event) {
