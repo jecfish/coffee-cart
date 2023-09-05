@@ -13,7 +13,7 @@ const getters = {}
 const actions = {
   async getCoffeeList({ state, commit }: any) {
     try {
-      const list = await coffee.getList(state.waitTime);
+      const list = await coffee.getListXhr(state.waitTime);
       commit("getListSuccess", list);
     } catch (err) {
       commit("getListFailure", err);
