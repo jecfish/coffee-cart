@@ -21,7 +21,7 @@
     <!-- <Ad v-if="showAd" /> -->
   </div>
 
-  <img src="haha.png" alt="">
+  <img src="https://coffee-cart.app/haha.png" alt="">
 
   <dialog data-cy="add-to-cart-modal" ref="dialog">
     <p>Add <strong>{{ selectedCoffee }}</strong> to the cart?</p>
