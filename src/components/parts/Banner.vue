@@ -28,9 +28,9 @@ export default defineComponent({
     }
   },
   created() {
-    this.timeoutId = setTimeout(() => {
+    // this.timeoutId = setTimeout(() => {
       this.show = true;
-    }, this.timeout * 1.5) as any;
+    // }, this.timeout * 1.5) as any;
   },
   unmounted() {
     if (this.timeoutId) {

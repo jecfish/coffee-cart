@@ -1,5 +1,7 @@
 <template>
-  <Banner v-if="renderAd" />
+  <div class="banner-container">
+    <Banner v-if="renderAd" />
+  </div>
   <!-- <iframe ref="iframe" v-if="showAd" src="/ad" height="1" width="1" scrolling="no" frameborder="0"></iframe> -->
   <Promotion v-if="showPromo" @close="closedPromo()" />
   <div>
@@ -18,6 +20,8 @@
     <Pay :isDisablePreview="cartCount == 0" />
     <!-- <Ad v-if="showAd" /> -->
   </div>
+
+  <img src="haha.png" alt="">
 
   <dialog data-cy="add-to-cart-modal" ref="dialog">
     <p>Add <strong>{{ selectedCoffee }}</strong> to the cart?</p>
@@ -82,7 +86,7 @@ export default defineComponent({
         this.renderAd = true;
         this.renderFonts();
 
-      }, this.waitTime * 2.5) as any;
+      }, this.waitTime * 1.5) as any;
 
       slow();
     }
@@ -101,6 +105,7 @@ export default defineComponent({
     currency,
     // ...mapMutations("cart", ["addToCart"]),
     addToCart(name: string) {
+      console.error('oops, coffee error');
       slow();
       this.$store.commit('cart/addToCart', name);
 
@@ -130,26 +135,26 @@ export default defineComponent({
 
     },
     renderFonts() {
-      this.timeoutId = setTimeout(() => {
-        const newStyle = document.createElement('style');
-        this.renderAd = true;
-        newStyle.appendChild(document.createTextNode(`
-          @font-face {
-            font-family: 'Lobster';
-            font-style: normal;
-            font-display: swap;
-            font-weight: 400;
-            size-adjust: 140%;
-            line-gap-override: 150%;
-            descent-override: 30%;
-            src: url(https://fonts.gstatic.com/s/lobster/v27/neILzCirqoswsqX9zoKmM4MwWJU.woff2) format('woff2');
-            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-          }
+      // this.timeoutId = setTimeout(() => {
+      //   const newStyle = document.createElement('style');
+      //   this.renderAd = true;
+      //   newStyle.appendChild(document.createTextNode(`
+      //     @font-face {
+      //       font-family: 'Lobster';
+      //       font-style: normal;
+      //       font-display: swap;
+      //       font-weight: 400;
+      //       size-adjust: 140%;
+      //       line-gap-override: 150%;
+      //       descent-override: 30%;
+      //       src: url(https://fonts.gstatic.com/s/lobster/v27/neILzCirqoswsqX9zoKmM4MwWJU.woff2) format('woff2');
+      //       unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      //     }
 
-        `));
-        document.head.appendChild(newStyle);
-        this.isBigger = true;
-      }, this.waitTime * 1.5) as any;
+      //   `));
+      //   document.head.appendChild(newStyle);
+      //   this.isBigger = true;
+      // }, this.waitTime * 1.5) as any;
     },
     translate(coffee: string) {
       this.$store.commit('coffees/translateCoffee', coffee);
@@ -206,6 +211,10 @@ button:hover {
   ul {
     grid-template-columns: repeat(3, auto);
   }
+}
+
+.banner-container {
+  color: red;
 }
 
 li {
