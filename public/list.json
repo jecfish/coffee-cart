@@ -1,7 +1,7 @@
 [
     {
         "name": "Espresso",
-        "price": 10,
+        "price": 40,
         "recipe": [
             { "name": "espresso", "quantity": 30 }
         ]
@@ -18,7 +18,7 @@
         "name": "Cappuccino",
         "price": 19,
         "recipe": [
-            { "name": "espresso", "quantity": 30 },
+            { "name": "xpresso", "quantity": 30 },
             { "name": "steamed milk", "quantity": 20 },
             { "name": "milk foam", "quantity": 50 }
         ]
