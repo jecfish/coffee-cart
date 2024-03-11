@@ -127,9 +127,9 @@ export default defineComponent({
     },
     resizeFrame() {
       // setTimeout(() => {
-      const iframe = this.$refs.iframe as HTMLIFrameElement;
-      iframe.width = window.innerWidth + 'px';
-      iframe.height = '300px';
+      // const iframe = this.$refs.iframe as HTMLIFrameElement;
+      // iframe.width = window.innerWidth + 'px';
+      // iframe.height = '300px';
       // }, this.waitTime * 1.7);
       // console.log('resize')
 
