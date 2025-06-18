@@ -1,3 +1,7 @@
+Install node on your Device
+npm install
+npm install --save-dev vitest vue-test-utils @vue/test-utils
+npm run test
 [![Netlify Status](https://api.netlify.com/api/v1/badges/626af698-2379-4cfc-888c-3c502fad8f08/deploy-status)](https://app.netlify.com/sites/coffee-cart/deploys)
 
 # Coffee cart
@@ -5,6 +9,7 @@
 https://coffee-cart.app/. This demo created with Vue 3 + Typescript + Vite.
 
 ## Special actions you can do
+
 1. **Double click** on coffee title to translate it to Chinese.
 2. **Right click** on coffee icon to open an add to cart `<dialog>`.
 3. [Desktop only] **Hover** over Pay button will show a quick cart preview, click to add or remove items.
